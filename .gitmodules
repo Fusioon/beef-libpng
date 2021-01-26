@@ -1,0 +1,4 @@
+[submodule "submodules/libpng"]
+	path = submodules/libpng
+	url = https://github.com/glennrp/libpng.git
+	branch = libpng16
