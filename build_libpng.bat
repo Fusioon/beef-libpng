@@ -12,7 +12,7 @@ call build_zlib.bat
 cd submodules/libpng
 
 @IF EXIST .build GOTO HAS_CONFIG
-@copy ../CMakeLists_libpng.txt CMakeLists.txt /V /Y
+@copy ..\\CMakeLists_libpng.txt .\\CMakeLists.txt /V /Y
 mkdir .build
 cd .build
 cmake ../. -G"Visual Studio 16 2019" -Ax64 -Thost=x64 -DZLIB_LIBRARY="../../zlib/.build/Release/zlibstatic" -DZLIB_INCLUDE_DIR="../../zlib" -DPNG_SHARED="ON" -DPNG_STATIC="ON" -DPNG_EXECUTABLES="OFF" -DPNG_TESTS="OFF" -DMSVC_STATIC_LIB="ON"

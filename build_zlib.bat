@@ -5,7 +5,7 @@ PUSHD %~dp0
 cd submodules/zlib
 
 @IF EXIST zlib_build GOTO HAS_CONFIG
-@copy ../CMakeLists_zlib.txt CMakeLists.txt /V /Y
+@copy ..\\CMakeLists_zlib.txt .\\CMakeLists.txt /V /Y
 mkdir .build
 cd .build
 cmake ../. -G"Visual Studio 16 2019" -Ax64 -Thost=x64 -DMSVC_STATIC_LIB="OFF"
