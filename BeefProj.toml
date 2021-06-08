@@ -3,20 +3,19 @@ FileVersion = 1
 [Project]
 Name = "libpng"
 TargetType = "BeefLib"
-StartupObject = "Program"
 
 [Configs.Debug.Win64]
 BuildCommandsOnCompile = "IfFilesChanged"
 LibPaths = ["$(ProjectDir)/submodules/libpng/.build/Debug/libpng16_staticd.lib", "$(ProjectDir)/submodules/zlib/.build/Debug/zlibstaticd.lib"]
 
 [Configs.Release.Win64]
-LibPaths = ["$(ProjectDir)/dist/x64/libpng.lib"]
-PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/x64/*.dll\")"]
+BuildCommandsOnCompile = "IfFilesChanged"
+LibPaths = ["$(ProjectDir)/submodules/libpng/.build/Debug/libpng16_staticd.lib", "$(ProjectDir)/submodules/zlib/.build/Release/zlibstaticd.lib"]
 
 [Configs.Paranoid.Win64]
-LibPaths = ["$(ProjectDir)/dist/x64/libpng.lib"]
-PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/x64/*.dll\")"]
+BuildCommandsOnCompile = "IfFilesChanged"
+LibPaths = ["$(ProjectDir)/submodules/libpng/.build/Debug/libpng16_staticd.lib", "$(ProjectDir)/submodules/zlib/.build/Debug/zlibstaticd.lib"]
 
 [Configs.Test.Win64]
-LibPaths = ["$(ProjectDir)/dist/x64/libpng.lib"]
-PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/x64/*.dll\")"]
+BuildCommandsOnCompile = "IfFilesChanged"
+LibPaths = ["$(ProjectDir)/submodules/libpng/.build/Debug/libpng16_staticd.lib", "$(ProjectDir)/submodules/zlib/.build/Debug/zlibstaticd.lib"]
